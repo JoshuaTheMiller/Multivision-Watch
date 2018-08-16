@@ -25,7 +25,7 @@ class PluralsightTributeView extends Ui.WatchFace {
         // Get and show the current time
         var clockTime = Sys.getClockTime();
         var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
-        var view = View.findDrawableById("TimeLabel");
+        var view = View.findDrawableById("TimeDisplay");
         view.setText(timeString);
 
         // Call the parent onUpdate function to redraw the layout
