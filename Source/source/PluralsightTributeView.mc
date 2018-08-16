@@ -21,12 +21,8 @@ class PluralsightTributeView extends Ui.WatchFace {
     }
 
     // Update the view
-    function onUpdate(dc) {
-        // Get and show the current time
-        var clockTime = Sys.getClockTime();
-        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
-        var view = View.findDrawableById("TimeDisplay");
-        view.setText(timeString);
+    function onUpdate(dc) {       
+        setClockDisplay();
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
@@ -45,5 +41,11 @@ class PluralsightTributeView extends Ui.WatchFace {
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() {
     }
-
+    
+    function setClockDisplay() {
+    	var clockTime = Sys.getClockTime();
+        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
+        var view = View.findDrawableById("TimeDisplay");
+        view.setText(timeString);
+    }
 }
