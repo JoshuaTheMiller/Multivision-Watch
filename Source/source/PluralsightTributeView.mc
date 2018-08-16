@@ -6,6 +6,8 @@ using Toybox.Lang as Lang;
 using Toybox.Time.Gregorian as Date;
 using Toybox.Application as App;
 
+using Toybox.ActivityMonitor as Mon;
+
 class PluralsightTributeView extends Ui.WatchFace {
 
     function initialize() {
@@ -28,6 +30,7 @@ class PluralsightTributeView extends Ui.WatchFace {
         setClockDisplay();
 		setDateDisplay();
 		setBatteryDisplay();
+		setStepCountDisplay();
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -65,5 +68,11 @@ class PluralsightTributeView extends Ui.WatchFace {
     	var battery = Sys.getSystemStats().battery;				
 		var batteryDisplay = View.findDrawableById("BatteryDisplay");      
 		batteryDisplay.setText(battery.format("%d")+"%");	
+    }
+    
+    function setStepCountDisplay() {
+    	var stepCount = Mon.getInfo().steps.toString();		
+		var stepCountDisplay = View.findDrawableById("StepCountDisplay");      
+		stepCountDisplay.setText(stepCount);		
     }
 }
