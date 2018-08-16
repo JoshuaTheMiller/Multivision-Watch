@@ -33,6 +33,7 @@ class PluralsightTributeView extends Ui.WatchFace {
 		setStepCountDisplay();
 		setStepGoalDisplay();
 		setNotificationCountDisplay();
+		setHeartrateDisplay();
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -99,4 +100,29 @@ class PluralsightTributeView extends Ui.WatchFace {
 		var notificationCountDisplay = View.findDrawableById("NotificationCountDisplay");      
 		notificationCountDisplay.setText(formattedNotificationAmount);
     }
+    
+    function setHeartrateDisplay() {
+    	var heartRate = "";
+    	
+    	if(Mon has :INVALID_HR_SAMPLE) {
+    		heartRate = retrieveHeartrateText();
+    	}
+    	else {
+    		heartRate = "";
+    	}
+    	
+		var heartrateDisplay = View.findDrawableById("HeartrateDisplay");      
+		heartrateDisplay.setText(heartRate);
+    }
+    
+    function retrieveHeartrateText() {
+    	var heartrateIterator = ActivityMonitor.getHeartRateHistory(null, false);
+		var currentHeartrate = heartrateIterator.next().heartRate;
+		
+		if(currentHeartrate == Mon.INVALID_HR_SAMPLE) {
+			return "";
+		}		
+		
+		return currentHeartrate.format("%d");
+    }    
 }
