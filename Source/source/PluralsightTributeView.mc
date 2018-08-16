@@ -27,6 +27,7 @@ class PluralsightTributeView extends Ui.WatchFace {
     function onUpdate(dc) {       
         setClockDisplay();
 		setDateDisplay();
+		setBatteryDisplay();
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -58,5 +59,11 @@ class PluralsightTributeView extends Ui.WatchFace {
 		var dateString = Lang.format("$1$ $2$, $3$", [date.month, date.day, date.year]);
 		var dateDisplay = View.findDrawableById("DateDisplay");      
 		dateDisplay.setText(dateString);	    	
+    }
+    
+    function setBatteryDisplay() {
+    	var battery = Sys.getSystemStats().battery;				
+		var batteryDisplay = View.findDrawableById("BatteryDisplay");      
+		batteryDisplay.setText(battery.format("%d")+"%");	
     }
 }
