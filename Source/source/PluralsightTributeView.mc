@@ -31,6 +31,7 @@ class PluralsightTributeView extends Ui.WatchFace {
 		setDateDisplay();
 		setBatteryDisplay();
 		setStepCountDisplay();
+		setStepGoalDisplay();
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -74,5 +75,11 @@ class PluralsightTributeView extends Ui.WatchFace {
     	var stepCount = Mon.getInfo().steps.toString();		
 		var stepCountDisplay = View.findDrawableById("StepCountDisplay");      
 		stepCountDisplay.setText(stepCount);		
+    }
+    
+    function setStepGoalDisplay() {
+    	var stepGoalPercent = ((Mon.getInfo().steps).toFloat() / (Mon.getInfo().stepGoal).toFloat() * 100f);
+		var stepGoalDisplay = View.findDrawableById("StepGoalDisplay");      
+		stepGoalDisplay.setText(stepGoalPercent.format( "%d" ) + "%");	
     }
 }
