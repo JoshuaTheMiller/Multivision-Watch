@@ -52,14 +52,14 @@ class PluralsightTributeView extends Ui.WatchFace {
     function onEnterSleep() {
     }
     
-    function setClockDisplay() {
+    private function setClockDisplay() {
     	var clockTime = Sys.getClockTime();
         var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
         var view = View.findDrawableById("TimeDisplay");
         view.setText(timeString);
     }
     
-    function setDateDisplay() {        
+    private function setDateDisplay() {        
     	var now = Time.now();
 		var date = Date.info(now, Time.FORMAT_LONG);
 		var dateString = Lang.format("$1$ $2$, $3$", [date.month, date.day, date.year]);
@@ -67,25 +67,25 @@ class PluralsightTributeView extends Ui.WatchFace {
 		dateDisplay.setText(dateString);	    	
     }
     
-    function setBatteryDisplay() {
+    private function setBatteryDisplay() {
     	var battery = Sys.getSystemStats().battery;				
 		var batteryDisplay = View.findDrawableById("BatteryDisplay");      
 		batteryDisplay.setText(battery.format("%d")+"%");	
     }
     
-    function setStepCountDisplay() {
+    private function setStepCountDisplay() {
     	var stepCount = Mon.getInfo().steps.toString();		
 		var stepCountDisplay = View.findDrawableById("StepCountDisplay");      
 		stepCountDisplay.setText(stepCount);		
     }
     
-    function setStepGoalDisplay() {
+    private function setStepGoalDisplay() {
     	var stepGoalPercent = ((Mon.getInfo().steps).toFloat() / (Mon.getInfo().stepGoal).toFloat() * 100f);
 		var stepGoalDisplay = View.findDrawableById("StepGoalDisplay");      
 		stepGoalDisplay.setText(stepGoalPercent.format( "%d" ) + "%");	
     }
     
-    function setNotificationCountDisplay() {
+    private function setNotificationCountDisplay() {
     	var notificationAmount = Sys.getDeviceSettings().notificationCount;
 		
 		var formattedNotificationAmount = "";
@@ -101,7 +101,7 @@ class PluralsightTributeView extends Ui.WatchFace {
 		notificationCountDisplay.setText(formattedNotificationAmount);
     }
     
-    function setHeartrateDisplay() {
+    private function setHeartrateDisplay() {
     	var heartRate = "";
     	
     	if(Mon has :INVALID_HR_SAMPLE) {
@@ -115,7 +115,7 @@ class PluralsightTributeView extends Ui.WatchFace {
 		heartrateDisplay.setText(heartRate);
     }
     
-    function retrieveHeartrateText() {
+    private function retrieveHeartrateText() {
     	var heartrateIterator = ActivityMonitor.getHeartRateHistory(null, false);
 		var currentHeartrate = heartrateIterator.next().heartRate;
 		
