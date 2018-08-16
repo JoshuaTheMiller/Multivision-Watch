@@ -3,6 +3,9 @@ using Toybox.Graphics as Gfx;
 using Toybox.System as Sys;
 using Toybox.Lang as Lang;
 
+using Toybox.Time.Gregorian as Date;
+using Toybox.Application as App;
+
 class PluralsightTributeView extends Ui.WatchFace {
 
     function initialize() {
@@ -23,7 +26,7 @@ class PluralsightTributeView extends Ui.WatchFace {
     // Update the view
     function onUpdate(dc) {       
         setClockDisplay();
-
+		setDateDisplay();
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -47,5 +50,13 @@ class PluralsightTributeView extends Ui.WatchFace {
         var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
         var view = View.findDrawableById("TimeDisplay");
         view.setText(timeString);
+    }
+    
+    function setDateDisplay() {        
+    	var now = Time.now();
+		var date = Date.info(now, Time.FORMAT_LONG);
+		var dateString = Lang.format("$1$ $2$, $3$", [date.month, date.day, date.year]);
+		var dateDisplay = View.findDrawableById("DateDisplay");      
+		dateDisplay.setText(dateString);	    	
     }
 }
