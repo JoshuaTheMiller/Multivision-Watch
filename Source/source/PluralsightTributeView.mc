@@ -85,6 +85,8 @@ class PluralsightTributeView extends Ui.WatchFace {
     	var stepGoalPercent = ((Mon.getInfo().steps).toFloat() / (Mon.getInfo().stepGoal).toFloat() * 100f);
 		var stepGoalDisplay = View.findDrawableById("StepGoalDisplay");      
 		stepGoalDisplay.setText(stepGoalPercent.format( "%d" ) + "%");	
+		var goalPercentBarDisplay = View.findDrawableById("GoalPercentBarDisplay");
+		goalPercentBarDisplay.setPercent(stepGoalPercent/100);
     }
     
     private function setNotificationCountDisplay() {
