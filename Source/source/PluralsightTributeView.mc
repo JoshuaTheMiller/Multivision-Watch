@@ -64,17 +64,18 @@ class PluralsightTributeView extends Ui.WatchFace {
     }
     
     private function setDateDisplay() {        
+    	var dateDisplay = View.findDrawableById("DateDisplay");
+    	dateDisplay.setDatePlaceholder(View.findDrawableById("DatePlaceholder"));      
     	var now = Time.now();
 		var date = Date.info(now, Time.FORMAT_LONG);
-		var dateString = Lang.format("$1$ $2$, $3$", [date.month, date.day, date.year]);
-		var dateDisplay = View.findDrawableById("DateDisplay");      
-		dateDisplay.setText(dateString);	    	
+		var dateString = Lang.format("$1$ $2$, $3$", [date.month, date.day, date.year]);		
+		dateDisplay.setDate(dateString);	    			
     }
     
     private function setBatteryDisplay() {
     	var battery = Sys.getSystemStats().battery;				
 		var batteryDisplay = View.findDrawableById("BatteryDisplay");      
-		batteryDisplay.setText(battery.format("%d")+"%");	
+		batteryDisplay.setText(battery.format("%d"));	
 		var batteryBarDisplay = View.findDrawableById("BatteryBarDisplay");
 		batteryBarDisplay.setPercent(battery/100);
     }
@@ -88,7 +89,7 @@ class PluralsightTributeView extends Ui.WatchFace {
     private function setStepGoalDisplay() {
     	var stepGoalPercent = ((Mon.getInfo().steps).toFloat() / (Mon.getInfo().stepGoal).toFloat() * 100f);
 		var stepGoalDisplay = View.findDrawableById("StepGoalDisplay");      
-		stepGoalDisplay.setText(stepGoalPercent.format( "%d" ) + "%");	
+		stepGoalDisplay.setText(stepGoalPercent.format( "%d" ));	
 		var goalPercentBarDisplay = View.findDrawableById("GoalPercentBarDisplay");
 		goalPercentBarDisplay.setPercent(stepGoalPercent/100);
     }

@@ -1,8 +1,3 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
-    
-    <drawable-list id="BackgroundDrawable" width="205" height="148">
-        <shape type="rectangle" x="0" y="0" width="205" height="74" color="#FF0055"/>
-        <shape type="rectangle" x="0" y="74" width="205" height="74" color="#FF5500"/>
-    </drawable-list>
 </drawables>
