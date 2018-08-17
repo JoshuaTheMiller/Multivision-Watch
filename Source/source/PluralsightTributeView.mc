@@ -9,13 +9,16 @@ using Toybox.Application as App;
 using Toybox.ActivityMonitor as Mon;
 
 class PluralsightTributeView extends Ui.WatchFace {
-
+	private var deviceWidth;
+	
     function initialize() {
         WatchFace.initialize();
     }
 
     // Load your resources here
     function onLayout(dc) {
+    	deviceWidth = dc.getWidth() / 2;    
+    
         setLayout(Rez.Layouts.WatchFace(dc));
     }
 
@@ -34,6 +37,7 @@ class PluralsightTributeView extends Ui.WatchFace {
 		setStepGoalDisplay();
 		setNotificationCountDisplay();
 		setHeartrateDisplay();
+		adjustHeartrateDisplayAndStepCountPosition();
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -77,7 +81,7 @@ class PluralsightTributeView extends Ui.WatchFace {
     
     private function setStepCountDisplay() {
     	var stepCount = Mon.getInfo().steps.toString();		
-		var stepCountDisplay = View.findDrawableById("StepCountDisplay");      
+		var stepCountDisplay = getStepCountDisplay();  
 		stepCountDisplay.setText(stepCount);		
     }
     
@@ -108,15 +112,39 @@ class PluralsightTributeView extends Ui.WatchFace {
     private function setHeartrateDisplay() {
     	var heartRate = "";
     	
-    	if(Mon has :INVALID_HR_SAMPLE) {
+    	if(DoesDeviceSupportHeartrate()) {
     		heartRate = retrieveHeartrateText();
     	}
     	else {
-    		heartRate = "";
+    		heartRate = "N/A";
     	}
     	
-		var heartrateDisplay = View.findDrawableById("HeartrateDisplay");      
+		var heartrateDisplay = getHeartrateDisplay();      
 		heartrateDisplay.setText(heartRate);
+    }
+    
+    private function getHeartrateDisplay() {
+    	return View.findDrawableById("HeartrateDisplay");
+    }
+
+	private function getStepCountDisplay() {
+		return View.findDrawableById("StepCountDisplay");    
+	}
+    
+    private function DoesDeviceSupportHeartrate() {
+    	return Mon has :INVALID_HR_SAMPLE;
+    }
+    
+    private function adjustHeartrateDisplayAndStepCountPosition() {
+    	if(DoesDeviceSupportHeartrate()) {
+    		return;
+    	}
+    	
+    	var heartrateDisplay = getHeartrateDisplay();
+    	heartrateDisplay.setText("");
+    	
+    	var stepCountDisplay = getStepCountDisplay();
+    	stepCountDisplay.locX = deviceWidth;
     }
     
     private function retrieveHeartrateText() {
@@ -124,7 +152,7 @@ class PluralsightTributeView extends Ui.WatchFace {
 		var currentHeartrate = heartrateIterator.next().heartRate;
 		
 		if(currentHeartrate == Mon.INVALID_HR_SAMPLE) {
-			return "";
+			return "Invalid";
 		}		
 		
 		return currentHeartrate.format("%d");
