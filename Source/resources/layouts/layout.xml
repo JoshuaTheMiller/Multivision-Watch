@@ -24,12 +24,14 @@
     <drawable id="BatteryBarDisplay" class="RectangleBar">
      	<param name="percent">1</param>      	           
         <param name="color">0x00AAFF</param>
-        <param name="xOrigin">1</param>
+        <param name="xOffsetFromSide">1</param>
+        <param name="orientation">0</param>
     </drawable>
             
     <drawable id="GoalPercentBarDisplay" class="RectangleBar">
      	<param name="percent">1</param>      	             
         <param name="color">0x5500AA</param>
-        <param name="xOrigin">192</param>
+        <param name="xOffsetFromSide">1</param>
+        <param name="orientation">1</param>
     </drawable>    
 </layout>
