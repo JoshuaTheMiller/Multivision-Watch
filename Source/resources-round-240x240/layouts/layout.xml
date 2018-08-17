@@ -18,7 +18,8 @@
     	<param name="text">"00/00/00"</param>
     	<param name="font">Rez.Fonts.smallFont</param>      	           
         <param name="color">Gfx.COLOR_WHITE</param>
-        <param name="justification">Gfx.TEXT_JUSTIFY_CENTER</param>        
+        <param name="justification">Gfx.TEXT_JUSTIFY_CENTER</param>
+        <param name="offsetYFromCenter">30</param>        
     </drawable>     
     
     <drawable id="BatteryBarDisplay" class="CircularBar">

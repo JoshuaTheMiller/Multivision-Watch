@@ -1,7 +1,7 @@
 using Toybox.WatchUi as Ui;
 
 class DateControl extends Ui.Drawable {
-	hidden var text, font, color, justification;	
+	hidden var text, font, color, justification, offsetYFromCenter;	
 	
 	hidden var datePlaceholder;
 	
@@ -11,7 +11,8 @@ class DateControl extends Ui.Drawable {
         text = params.get(:text);
         font = params.get(:font);   
         color = params.get(:color);
-        justification = params.get(:justification);       
+        justification = params.get(:justification);
+        offsetYFromCenter = params.get(:offsetYFromCenter);       
     }
 
     function draw(dc) {
@@ -19,7 +20,7 @@ class DateControl extends Ui.Drawable {
 		var deviceWidth = dc.getWidth();
 		var halfWidth = deviceWidth / 2;					
             
-        var yPosition = centerY + 30;
+        var yPosition = centerY + offsetYFromCenter;
             
         dc.setColor(color, color);														
 		
