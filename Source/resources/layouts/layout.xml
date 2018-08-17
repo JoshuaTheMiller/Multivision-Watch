@@ -3,10 +3,17 @@
 	
     <label id="TimeDisplay" x="center" y="center" font="@Fonts.timeFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     
-    <label id="BatteryDisplay" text="00" x="left" y="top" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="BatteryDisplay" text="00" x="left" y="center" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="HeartrateDisplay" text="000" x="center" y="top" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="StepCountDisplay" text="00000" x="right" y="top" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
-    <label id="StepGoalDisplay" text="00000" x="left" y="bottom" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="StepGoalDisplay" text="00000" x="right" y="center" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="DateDisplay" text="00/00/00" x="center" y="bottom" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />      
     <label id="NotificationCountDisplay" text="+00" x="right" y="bottom" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />     
+    
+    <drawable id="BatteryBarDisplay" class="RectangleBar">
+     	<param name="percent">1</param> 
+     	<param name="maxHeight">65</param>              
+        <param name="color">0x00AAFF</param>
+        <param name="xOrigin">1</param>
+    </drawable>
 </layout>

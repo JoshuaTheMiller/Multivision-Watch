@@ -71,6 +71,8 @@ class PluralsightTributeView extends Ui.WatchFace {
     	var battery = Sys.getSystemStats().battery;				
 		var batteryDisplay = View.findDrawableById("BatteryDisplay");      
 		batteryDisplay.setText(battery.format("%d")+"%");	
+		var batteryBarDisplay = View.findDrawableById("BatteryBarDisplay");
+		batteryBarDisplay.setPercent(battery/100);
     }
     
     private function setStepCountDisplay() {
