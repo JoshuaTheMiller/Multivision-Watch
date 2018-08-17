@@ -1,7 +1,7 @@
 <layout id="WatchFace">
 	<drawable id="BackgroundDrawable"/>
 	
-    <label id="TimeDisplay" x="center" y="center" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="TimeDisplay" x="center" y="center" font="@Fonts.timeFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     
     <label id="BatteryDisplay" text="00" x="left" y="top" font="Gfx.FONT_XTINY" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="HeartrateDisplay" text="000" x="center" y="top" font="Gfx.FONT_XTINY" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
