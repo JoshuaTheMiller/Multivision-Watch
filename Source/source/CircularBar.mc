@@ -5,22 +5,24 @@ class CircularBar extends Ui.Drawable {
 	hidden var centerX;
     hidden var centerY;
 
-	hidden var percent, color, orientation;	
+	hidden var percent, color, orientation, barThickness, barGap;	
 	
     function initialize(params) {
         Drawable.initialize(params);
 
         color = params.get(:color);
         percent = params.get(:percent);                
-        orientation = params.get(:orientation);        
+        orientation = params.get(:orientation);
+        barThickness = params.get(:barThickness);        
+        barGap = params.get(:barGap);        
     }
 
     function draw(dc) {
     	centerX = dc.getWidth() / 2;
     	centerY = dc.getHeight() / 2;    
         
-        drawArcGroups(dc, 1, 1);                                                          
-        drawArcGroups(dc, percent, 3);
+        drawArcGroups(dc, 1, barGap);                                                          
+        drawArcGroups(dc, percent, barThickness);
     }
     
     function setPercent(newPercent) {
@@ -67,7 +69,7 @@ class CircularBar extends Ui.Drawable {
     	for(var i = 0; i < thickness; i++) {
     		dc.drawArc(centerX, centerY, 118 - i, direction, radiansToDegrees(radianStart), radiansToDegrees(radianEnd));
     		
-    		dc.drawArc(centerX, centerY, 114 - i, direction, radiansToDegrees(radianStart), radiansToDegrees(radianEnd));
+    		dc.drawArc(centerX, centerY, 118 - barThickness - barGap - i, direction, radiansToDegrees(radianStart), radiansToDegrees(radianEnd));
     	}        		    	
     }
     

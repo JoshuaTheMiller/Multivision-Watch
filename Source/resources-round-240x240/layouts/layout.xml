@@ -26,11 +26,15 @@
      	<param name="percent">1</param>      	           
         <param name="color">0x00AAFF</param>        
         <param name="orientation">0</param>
+        <param name="barThickness">4</param>
+        <param name="barGap">1</param>
     </drawable>
             
     <drawable id="GoalPercentBarDisplay" class="CircularBar">
      	<param name="percent">1</param>      	             
         <param name="color">0x5500AA</param>        
         <param name="orientation">1</param>
+        <param name="barThickness">4</param>
+        <param name="barGap">1</param>
     </drawable>      
 </layout>
