@@ -7,6 +7,18 @@
    	<label id="TimeDisplay_Top" x="center" y="center" font="@Fonts.timeFont_Top" justification="Gfx.TEXT_JUSTIFY_CENTER" color="0xFF5500" />
     <label id="TimeDisplay_Bottom" x="center" y="center" font="@Fonts.timeFont_Bottom" justification="Gfx.TEXT_JUSTIFY_CENTER" color="0xFF0055" /> 
     
+     <drawable id="BatteryTextBlock" class="TextBlockBackground">     	      	          
+        <param name="backgroundColor">0x00AAFF</param>                
+        <param name="xAnchor">Left</param>      
+        <param name="xOffset">-10</param>        
+    </drawable>   
+    
+     <drawable id="GoalPercentTextBlock" class="TextBlockBackground">     	      	          
+        <param name="backgroundColor">0x5500AA</param>
+        <param name="xAnchor">Right</param>                
+        <param name="xOffset">10</param>               
+    </drawable>    
+    
     <label id="BatteryDisplay" text="00" x="left" y="center" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="HeartrateDisplay" text="000" x="68" y="top" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="StepCountDisplay" text="00000" x="137" y="top" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
