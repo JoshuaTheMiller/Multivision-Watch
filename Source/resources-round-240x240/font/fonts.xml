@@ -1,5 +1,5 @@
 <fonts>
 	<font id="timeFont_Bottom" filename="largeFont_Bottom.fnt" filter="0123456789:" />
 	<font id="timeFont_Top" filename="largeFont_Top.fnt" filter="0123456789:" />
-	<font id="smallFont" filename="font_swSimp_16.fnt" filter="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%/-, " />	
+	<font id="smallFont" filename="font_swSimp_16.fnt" filter="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%/-+, " />	
 </fonts>  
