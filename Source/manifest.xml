@@ -16,8 +16,12 @@
             <iq:product id="fenix5x"/>
             <iq:product id="fenix5xplus"/>
             <iq:product id="fenixchronos"/>
+            <iq:product id="fr230"/>
+            <iq:product id="fr235"/>
+            <iq:product id="fr630"/>
             <iq:product id="fr645"/>
             <iq:product id="fr645m"/>
+            <iq:product id="fr735xt"/>
             <iq:product id="fr920xt"/>
             <iq:product id="fr935"/>
             <iq:product id="vivoactive"/>
