@@ -11,6 +11,7 @@ using Toybox.ActivityMonitor as Mon;
 class PluralsightTributeView extends Ui.WatchFace {
 	private var deviceWidth;
 	private var currentApp;
+	private var currentSettings;	
 	
     function initialize() {
         WatchFace.initialize();               
@@ -20,6 +21,7 @@ class PluralsightTributeView extends Ui.WatchFace {
     function onLayout(dc) {
     	deviceWidth = dc.getWidth() / 2;    
     	currentApp = App.getApp();
+    	currentSettings = Sys.getDeviceSettings();
     
         setLayout(Rez.Layouts.WatchFace(dc));
     }
@@ -58,9 +60,8 @@ class PluralsightTributeView extends Ui.WatchFace {
     function onEnterSleep() {
     }
     
-    private function setClockDisplay() {
-    	var clockTime = Sys.getClockTime();
-        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);               
+    private function setClockDisplay() {    	    	
+        var timeString = getTimeString();                       
         var timeDisplay_Bottom = View.findDrawableById("TimeDisplay_Bottom");
         var TimeDisplay_Top = View.findDrawableById("TimeDisplay_Top");
         timeDisplay_Bottom.setText(timeString);
@@ -167,5 +168,18 @@ class PluralsightTributeView extends Ui.WatchFace {
 		}		
 		
 		return currentHeartrate.format("%d");
+    }
+    
+    private function getTimeString() {    	
+    	var clockTime = Sys.getClockTime();        		
+    	var hour = clockTime.hour;	
+		var minute = clockTime.min.format("%02d");				
+		
+		if(!currentSettings.is24Hour) {
+			hour = hour % 12;
+        	hour = (hour == 0) ? 12 : hour;  
+        }        	  
+        
+        return Lang.format("$1$:$2$",[hour, minute]);
     }    
 }
