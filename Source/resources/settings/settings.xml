@@ -1,0 +1,5 @@
+<settings>
+    <setting propertyKey="@Properties.InvertTimeColor" title="@Strings.InvertTimeColorSettingTitle">
+        <settingConfig type="boolean" />
+    </setting>    
+</settings>

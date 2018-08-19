@@ -10,14 +10,16 @@ using Toybox.ActivityMonitor as Mon;
 
 class PluralsightTributeView extends Ui.WatchFace {
 	private var deviceWidth;
+	private var currentApp;
 	
     function initialize() {
-        WatchFace.initialize();
+        WatchFace.initialize();               
     }
 
     // Load your resources here
     function onLayout(dc) {
     	deviceWidth = dc.getWidth() / 2;    
+    	currentApp = App.getApp();
     
         setLayout(Rez.Layouts.WatchFace(dc));
     }
@@ -58,11 +60,17 @@ class PluralsightTributeView extends Ui.WatchFace {
     
     private function setClockDisplay() {
     	var clockTime = Sys.getClockTime();
-        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
+        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);               
         var timeDisplay_Bottom = View.findDrawableById("TimeDisplay_Bottom");
         var TimeDisplay_Top = View.findDrawableById("TimeDisplay_Top");
         timeDisplay_Bottom.setText(timeString);
         TimeDisplay_Top.setText(timeString);
+        
+        // Users will have to navigate away from their watch face and then back to get this to reset
+        if(currentApp.getProperty("InvertTimeColor") == false) {
+			timeDisplay_Bottom.setColor(Gfx.COLOR_WHITE);
+        	TimeDisplay_Top.setColor(Gfx.COLOR_WHITE);
+        }     
     }
     
     private function setDateDisplay() {        
