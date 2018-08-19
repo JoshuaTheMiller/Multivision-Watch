@@ -19,7 +19,7 @@ class PluralsightTributeView extends Ui.WatchFace {
 
     // Load your resources here
     function onLayout(dc) {
-    	deviceWidth = dc.getWidth() / 2;    
+    	deviceWidth = dc.getWidth();    
     	currentApp = App.getApp();
     	currentSettings = Sys.getDeviceSettings();
     
@@ -147,6 +147,10 @@ class PluralsightTributeView extends Ui.WatchFace {
     	return Mon has :INVALID_HR_SAMPLE;
     }
     
+    private function getNotificationCountDisplay() {
+    	return View.findDrawableById("NotificationCountDisplay");
+    }
+    
     private function adjustHeartrateDisplayAndStepCountPosition() {
     	if(DoesDeviceSupportHeartrate()) {
     		return;
@@ -155,8 +159,8 @@ class PluralsightTributeView extends Ui.WatchFace {
     	var heartrateDisplay = getHeartrateDisplay();
     	heartrateDisplay.setText("");
     	
-    	var stepCountDisplay = getStepCountDisplay();
-    	stepCountDisplay.locX = deviceWidth;
+    	var notificationCountDisplay = getNotificationCountDisplay();
+    	notificationCountDisplay.locX = deviceWidth / 2;
     }
     
     private function retrieveHeartrateText() {
