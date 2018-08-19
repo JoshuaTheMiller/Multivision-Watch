@@ -59,8 +59,10 @@ class PluralsightTributeView extends Ui.WatchFace {
     private function setClockDisplay() {
     	var clockTime = Sys.getClockTime();
         var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
-        var view = View.findDrawableById("TimeDisplay");
-        view.setText(timeString);
+        var timeDisplay_Bottom = View.findDrawableById("TimeDisplay_Bottom");
+        var TimeDisplay_Top = View.findDrawableById("TimeDisplay_Top");
+        timeDisplay_Bottom.setText(timeString);
+        TimeDisplay_Top.setText(timeString);
     }
     
     private function setDateDisplay() {        

@@ -1,6 +1,6 @@
 info face="Niagara Engraved" size=120 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=0 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
 common lineHeight=120 base=98 scaleW=256 scaleH=256 pages=1 packed=0 alphaChnl=0 redChnl=0 greenChnl=0 blueChnl=0
-page id=0 file="font_niagara_numbers_80_0.png"
+page id=0 file="largeFont_Bottom.png"
 chars count=11
 char id=48   x=0     y=0     width=27    height=78    xoffset=3     yoffset=20    xadvance=33    page=0  chnl=15
 char id=49   x=0     y=79    width=15    height=78    xoffset=1     yoffset=20    xadvance=18    page=0  chnl=15

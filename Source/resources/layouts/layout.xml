@@ -4,7 +4,8 @@
     	<param name="bottomColor">0xFF5500</param>
     </drawable>
 
-    <label id="TimeDisplay" x="center" y="center" font="@Fonts.timeFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+   	<label id="TimeDisplay_Top" x="center" y="center" font="@Fonts.timeFont_Top" justification="Gfx.TEXT_JUSTIFY_CENTER" color="0xFF5500" />
+    <label id="TimeDisplay_Bottom" x="center" y="center" font="@Fonts.timeFont_Bottom" justification="Gfx.TEXT_JUSTIFY_CENTER" color="0xFF0055" /> 
     
     <label id="BatteryDisplay" text="00" x="left" y="center" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
     <label id="HeartrateDisplay" text="000" x="68" y="top" font="@Fonts.smallFont" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
