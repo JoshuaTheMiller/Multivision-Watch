@@ -1,0 +1,15 @@
+info face="Niagara Engraved" size=120 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=0 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
+common lineHeight=120 base=98 scaleW=256 scaleH=256 pages=1 packed=0 alphaChnl=0 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="largeFont_Top.png"
+chars count=11
+char id=48   x=0     y=0     width=27    height=78    xoffset=3     yoffset=20    xadvance=33    page=0  chnl=15
+char id=49   x=0     y=79    width=15    height=78    xoffset=1     yoffset=20    xadvance=18    page=0  chnl=15
+char id=50   x=196   y=0     width=26    height=78    xoffset=3     yoffset=20    xadvance=32    page=0  chnl=15
+char id=51   x=223   y=0     width=26    height=78    xoffset=3     yoffset=20    xadvance=32    page=0  chnl=15
+char id=52   x=28    y=0     width=27    height=78    xoffset=1     yoffset=20    xadvance=29    page=0  chnl=15
+char id=53   x=56    y=0     width=27    height=78    xoffset=2     yoffset=20    xadvance=32    page=0  chnl=15
+char id=54   x=84    y=0     width=27    height=78    xoffset=3     yoffset=20    xadvance=33    page=0  chnl=15
+char id=55   x=112   y=0     width=27    height=78    xoffset=3     yoffset=20    xadvance=31    page=0  chnl=15
+char id=56   x=140   y=0     width=27    height=78    xoffset=3     yoffset=20    xadvance=33    page=0  chnl=15
+char id=57   x=168   y=0     width=27    height=78    xoffset=3     yoffset=20    xadvance=33    page=0  chnl=15
+char id=58   x=16    y=79    width=9     height=42    xoffset=3     yoffset=56    xadvance=14    page=0  chnl=15
