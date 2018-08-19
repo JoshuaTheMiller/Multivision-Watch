@@ -5,7 +5,7 @@ class CircularBar extends Ui.Drawable {
 	hidden var centerX;
     hidden var centerY;
 
-	hidden var percent, color, orientation, barThickness, barGap;	
+	hidden var percent, color, orientation, barThickness, barGap, startingRadius;	
 	
     function initialize(params) {
         Drawable.initialize(params);
@@ -14,7 +14,17 @@ class CircularBar extends Ui.Drawable {
         percent = params.get(:percent);                
         orientation = params.get(:orientation);
         barThickness = params.get(:barThickness);        
-        barGap = params.get(:barGap);        
+        barGap = params.get(:barGap);      
+        
+        var tryGetStartingRadius = params.get(:startingRadius); 
+        
+        if(tryGetStartingRadius != null) {
+        	startingRadius = tryGetStartingRadius;
+        }
+        else {
+        	startingRadius = 118; 
+        }
+                        
     }
 
     function draw(dc) {
@@ -67,9 +77,9 @@ class CircularBar extends Ui.Drawable {
     
     hidden function drawDoubleArcs(dc, thickness, direction, radianStart, radianEnd) {
     	for(var i = 0; i < thickness; i++) {
-    		dc.drawArc(centerX, centerY, 118 - i, direction, radiansToDegrees(radianStart), radiansToDegrees(radianEnd));
+    		dc.drawArc(centerX, centerY, startingRadius - i, direction, radiansToDegrees(radianStart), radiansToDegrees(radianEnd));
     		
-    		dc.drawArc(centerX, centerY, 118 - barThickness - barGap - i, direction, radiansToDegrees(radianStart), radiansToDegrees(radianEnd));
+    		dc.drawArc(centerX, centerY, startingRadius - barThickness - barGap - i, direction, radiansToDegrees(radianStart), radiansToDegrees(radianEnd));
     	}        		    	
     }
     
