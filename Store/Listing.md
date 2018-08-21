@@ -27,3 +27,7 @@ Starting with the number present in the blue on the left middle side of all of t
 * Notification count
 * Goal percent (right most side)
 * Step count
+
+---------------------------
+
+By the way, Sunca means sunset in Croatian, and the colors of this face are similar to those in some sunsets. The icon is a mountain because Pluralsight HQ is near Salt Lake City, and there is a 3 peaked mountain there (Mount Nebo).
