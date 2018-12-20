@@ -168,7 +168,7 @@ class PluralsightTributeView extends Ui.WatchFace {
 		var currentHeartrate = heartrateIterator.next().heartRate;
 		
 		if(currentHeartrate == Mon.INVALID_HR_SAMPLE) {
-			return "Invalid";
+			return "-";
 		}		
 		
 		return currentHeartrate.format("%d");
