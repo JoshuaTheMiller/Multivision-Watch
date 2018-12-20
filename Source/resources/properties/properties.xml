@@ -1,5 +1,5 @@
 <properties>
-    <property id="InvertTimeColor" type="boolean">true</property>  
+    <property id="InvertTimeColor" type="boolean">false</property>  
     
     <property id="BackgroundTopColor" type="number">0xFF0055</property>       
     <property id="BackgroundBottomColor" type="number">0xFF5500</property>       
