@@ -10,4 +10,4 @@ Disclaimer: it has been a while since I've created a watch face from scratch, an
 
 This repository is for a [watch face for Garmin watches](https://apps.garmin.com/en-US/apps/e0a26568-1c87-44a6-99ed-2de2955dff07).
 
-![Pluralsight Watchface Screenshot](https://github.com/JoshuaTheMiller/Multivision-Watch/blob/master/Store/Cover.png)
+![Pluralsight Watchface Screenshot](https://github.com/JoshuaTheMiller/Multivision-Watch/blob/main/Store/Cover.png?raw=true)
