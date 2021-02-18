@@ -1,4 +1,14 @@
+<div align="center">
+
 # Multivision-Watch
+
+[![Discord](https://img.shields.io/discord/768637103402909716?label=Discord&style=flat-square)](https://discordapp.com/widget?id=768637103402909716&theme=dark) [![MediumLink](https://img.shields.io/badge/Read%20about%20me%20on%20-Medium-lightgrey?style=flat-square)][medium] [![MIT License](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](https://github.com/JoshuaTheMiller/Multivision-Watch/blob/main/LICENSE) 
+
+![Pluralsight Watchface Screenshot](https://github.com/JoshuaTheMiller/Multivision-Watch/blob/main/Store/Cover.png?raw=true)
+
+</div>
+
+---
 
 👁⌚👁 *Need I say more?*
 
@@ -10,4 +20,4 @@ Disclaimer: it has been a while since I've created a watch face from scratch, an
 
 This repository is for a [watch face for Garmin watches](https://apps.garmin.com/en-US/apps/e0a26568-1c87-44a6-99ed-2de2955dff07).
 
-![Pluralsight Watchface Screenshot](https://github.com/JoshuaTheMiller/Multivision-Watch/blob/main/Store/Cover.png?raw=true)
+[medium]: https://medium.com/@JoshuaTheMiller/making-a-watchface-for-garmin-devices-8c3ce28cae08
