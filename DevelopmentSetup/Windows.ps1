@@ -1,7 +1,7 @@
 <# 
 I HIGHLY recommend reading through Garmin's getting started page. I also highly recommend only running scripts when you know what they do. Who knows if I wrote this correctly ;)
 
-The getting started page: https://developer.garmin.com/connect-iq/programmers-guide/getting-started/
+The getting started page: https://developer.garmin.com/connect-iq/connect-iq-basics/getting-started/
 
 WARNING: I do not have a rollback script created for this.
 
@@ -92,7 +92,7 @@ AppendToPath "$finalDestination\Unzipped\bin\";
 
 choco install eclipse -y;
 
-"Unfortunately, you're going to have to setup Eclipse yourself. Search for `The Eclipse Plugin` heading on this webpage: https://developer.garmin.com/connect-iq/programmers-guide/getting-started";
+"Unfortunately, you're going to have to setup Eclipse yourself. Search for `The Eclipse Plugin` heading on this webpage: https://developer.garmin.com/connect-iq/connect-iq-basics/getting-started/";
 "Remember, the SDK has been unzipped into $finalDestination";
 
 #endregion
