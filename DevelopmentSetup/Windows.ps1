@@ -3,6 +3,8 @@ I HIGHLY recommend reading through Garmin's getting started page. I also highly 
 
 The getting started page: https://developer.garmin.com/connect-iq/connect-iq-basics/getting-started/
 
+This script still needs to be updated, but development now uses VS Code! https://forums.garmin.com/developer/connect-iq/b/news-announcements/posts/moving-from-eclipse-to-visual-studio-code?utm_source=Americas&utm_medium=email&utm_campaign=en-US%20Delivery%2C%20AMER-DEVL-DEVL-47603-Jan%202022%20CIQ%20Developer%20Email
+
 WARNING: I do not have a rollback script created for this.
 
 #>
